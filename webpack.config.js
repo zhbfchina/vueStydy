@@ -8,7 +8,11 @@ const isDev = process.env.NODE_ENV === 'development';
 
 const config = {
     target: 'web',
-    entry: __dirname + '/src/index.js',
+    entry:
+        {
+            app: __dirname + '/src/index.js',
+            vendor: ["vue"]
+        },
     output: {
         filename: 'bundle.js',
         path: __dirname + '/dist'
@@ -48,9 +52,9 @@ const config = {
                     'style-loader',
                     'css-loader',
                     {
-                        loader:'postcss-loader',
-                        options:{
-                            sourceMap:true,
+                        loader: 'postcss-loader',
+                        options: {
+                            sourceMap: true,
                         }
                     },
                     'less-loader'
@@ -66,7 +70,13 @@ const config = {
         }),
         new HTMLPlugin(),
         new webpack.HotModuleReplacementPlugin(),
-        new webpack.NoEmitOnErrorsPlugin()
+        new webpack.NoEmitOnErrorsPlugin(),
+        new webpack.optimize.CommonsChunkPlugin({
+            name: 'vendor'
+        }),
+        new webpack.optimize.CommonsChunkPlugin({
+            name: 'runtime'
+        })
     ],
     devServer: {
         port: 8000,

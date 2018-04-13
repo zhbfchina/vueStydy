@@ -1,0 +1,59 @@
+.transform_box{
+    width:110px;
+    height:50px;
+    position:absolute;
+    z-index: 99999999;
+}
+.Coordinate_LT{
+    top:20px;
+    left:20px;
+}
+.Coordinate_RT{
+    top:20px;
+    right:20px;
+}
+.Coordinate_LB{
+    left:20px;
+    bottom:20px;
+}
+.Coordinate_RB{
+    right:20px;
+    bottom:20px;
+}
+.transform_left,.transform_right{
+    float:left;
+    width:48px;
+    height:48px;
+    border:1px solid #808080;
+    background-color: #fff;
+}
+.transform_right{
+    margin-left:10px;
+}
+.transform_leftg{
+    cursor:pointer;
+    position:relative;
+}
+.transform_leftg img{
+    margin:2px 2px;
+    border:1px solid #83a1ff;
+}
+.transform_rightg{
+    cursor:pointer;
+    position:relative;
+}
+.transform_rightg img{
+    margin:2px 2px;
+    border:1px solid #83a1ff;
+}
+.transform_asp a{
+    top:27px;
+    left:3px;
+    height:18px;
+    width:42px;
+    color:#fff;
+    line-height:18px;
+    text-align:center;
+    position:absolute;
+    background-color:rgba(102, 102, 102, 0.6);
+}
